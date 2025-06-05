@@ -1,7 +1,8 @@
+const PORT=5500;
 const express =require('express');
 const app = express();
 app.use(express.json());
-const PORT=5500;
+app.use(express.urlencoded({extended: true}));
 const {engine} = require('express-handlebars');
 const connectDB = require('./models/db');
 
@@ -13,6 +14,11 @@ connectDB();
 app.get('/', (req, res) => {
     res.render('home');
 });
+
+
+app.use('/emp', require('./controllers/routes'));
+app.use('/emp', require('./controllers/routes'));
+
 
 app.listen(PORT,()=>{
     console.log(`server is running on ${PORT}`);

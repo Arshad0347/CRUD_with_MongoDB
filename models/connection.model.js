@@ -2,19 +2,19 @@ const { default: mongoose } = require('mongoose');
 
 const Schema = require('mongoose').Schema;
 const employeeSchema = new Schema({
-    fullName:{
+    Name:{
         type: String,
         
     },
-    email:{
+    Email:{
         type: String,
         
     },
-    phone:{
+    Phone:{
         type: String,
         
     },
-    city:{
+    City:{
         type: String,
         
     }
